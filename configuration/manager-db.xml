@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+    <!-- db.properties -->
+    <property>
+        <name>manager-db</name>
+        <description>SMG Manager-db信息</description>
+        <value>
+datasource.driverClassName=com.mysql.jdbc.Driver
+datasource.url=jdbc:mysql://10.1.1.253:3306/ucar_datalink?createDatabaseIfNotExist=true
+datasource.username=root
+datasource.password=123456
+        </value>
+        <value-attributes>
+            <type>content</type>
+        </value-attributes>
+    </property>
+</configuration>

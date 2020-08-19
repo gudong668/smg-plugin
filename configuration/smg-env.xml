@@ -1,0 +1,202 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!-- Licensed to the Apache Software Foundation (ASF) under one or more contributor
+    license agreements. See the NOTICE file distributed with this work for additional
+    information regarding copyright ownership. The ASF licenses this file to
+    You under the Apache License, Version 2.0 (the "License"); you may not use
+    this file except in compliance with the License. You may obtain a copy of
+    the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required
+    by applicable law or agreed to in writing, software distributed under the
+    License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS
+    OF ANY KIND, either express or implied. See the License for the specific
+    language governing permissions and limitations under the License. -->
+<configuration>
+    <property>
+      <name>smg_user</name>
+      <value>root</value>
+      <property-type>USER</property-type>
+      <description>User smg daemon runs as</description>
+      <value-attributes>
+         <type>user</type>
+         <overridable>false</overridable>
+      </value-attributes>
+      <on-ambari-upgrade add="true" />
+   </property>
+   <property>
+      <name>smg_group</name>
+      <value>root</value>
+      <property-type>GROUP</property-type>
+      <description>smg group</description>
+      <value-attributes>
+         <type>user</type>
+         <overridable>false</overridable>
+      </value-attributes>
+      <on-ambari-upgrade add="true" />
+   </property>
+    <property>
+        <name>smg_flinker_pid_dir</name>
+        <value>/usr/hdp/2.5.0.0-1245/smg/dl-flinker/bin/flinker.pid</value>
+        <display-name>SMG Flinker Pid Dir</display-name>
+        <description>Dir containing process ID file</description>
+        <value-attributes>
+            <type>directory</type>
+            <overridable>false</overridable>
+            <editable-only-at-install>true</editable-only-at-install>
+        </value-attributes>
+        <on-ambari-upgrade add="true" />
+    </property>
+
+    <property>
+        <name>smg_flinker_conf_dir</name>
+        <value>/usr/hdp/2.5.0.0-1245/smg/dl-worker/conf/</value>
+    </property>
+
+    <property>
+        <name>smg_flinker_bin_dir</name>
+        <value>/usr/hdp/2.5.0.0-1245/smg/dl-flinker/bin</value>
+    </property>
+
+    <property>
+        <name>smg_flinker_dir</name>
+        <value>/usr/hdp/2.5.0.0-1245/smg/</value>
+    </property>
+
+     <!--<property>-->
+        <!--<name>datasource.driverClassName</name>-->
+        <!--<value>com.mysql.jdbc.Driver</value>-->
+    <!--</property>-->
+     <!--&lt;!&ndash;<property>&ndash;&gt;-->
+        <!--&lt;!&ndash;<name>datasource.url</name>&ndash;&gt;-->
+        <!--&lt;!&ndash;<value>jdbc:mysql://10.1.1.253:3306/ucar_datalink?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=false</value>&ndash;&gt;-->
+    <!--&lt;!&ndash;</property>&ndash;&gt;-->
+     <!--<property>-->
+        <!--<name>datasource.username</name>-->
+        <!--<value>root</value>-->
+    <!--</property>-->
+     <!--<property>-->
+        <!--<name>datasource.password</name>-->
+        <!--<value>123456</value>-->
+         <!--<tepy>password</tepy>-->
+    <!--</property>-->
+
+    <!--<property>-->
+        <!--<name>http_port</name>-->
+        <!--<value>9099</value>-->
+        <!--<display-name>HTTP Post</display-name>-->
+        <!--<description>SDR Webserver 服务端口</description>-->
+    <!--</property>-->
+
+    <!--<property>-->
+        <!--<name>smg_service_db_url</name>-->
+        <!--<value>jdbc:mysql://10.1.3.36:3306/dataflow?autoReconnect=true;useUnicode=true;characterEncoding=utf8</value>-->
+    <!--</property>-->
+
+    <!--<property>-->
+        <!--<name>smg_service_db_username</name>-->
+        <!--<value>root</value>-->
+    <!--</property>-->
+
+    <!--<property>-->
+        <!--<name>smg_service_db_password</name>-->
+        <!--<value>123456</value>-->
+    <!--</property>-->
+
+    <!--<property>-->
+        <!--<name>smg_service_dubbo_protocol_port</name>-->
+        <!--<value>20880</value>-->
+    <!--</property>-->
+
+    <!--<property>-->
+        <!--<name>smg_service_dubbo_registry_address</name>-->
+        <!--<value>zookeeper://10.1.3.36:2181?backup=10.1.3.36:2181,10.1.3.36:2181-->
+        <!--</value>-->
+    <!--</property>-->
+
+    <!--<property>-->
+        <!--<name>smg_service_dubbo_container</name>-->
+        <!--<value>spring</value>-->
+    <!--</property>-->
+
+    <!--<property>-->
+        <!--<name>smg_service_dubbo_app_name</name>-->
+        <!--<value>SMG-service</value>-->
+    <!--</property>-->
+
+    <!--<property>-->
+        <!--<name>smg_service_dubbo_spring_config</name>-->
+        <!--<value>classpath:service-deploy.xml</value>-->
+    <!--</property>-->
+
+    <property>
+        <name>smg_manager_pid_dir</name>
+        <value>/usr/hdp/2.5.0.0-1245/smg/dl-manager/bin/manager.pid</value>
+        <display-name>SMG Manager Pid Dir</display-name>
+        <description>Dir containing process ID file</description>
+        <value-attributes>
+            <type>directory</type>
+            <overridable>false</overridable>
+            <editable-only-at-install>true</editable-only-at-install>
+        </value-attributes>
+        <on-ambari-upgrade add="true" />
+    </property>
+
+    <property>
+        <name>smg_manager_log_dir</name>
+        <value>/usr/hdp/2.5.0.0-1245/smg/dl-manager/bin/managerJvm.log</value>
+        <display-name>SMG manager log dir</display-name>
+        <description>SMG manager log dir</description>
+    </property>
+
+    <property>
+        <name>smg_manager_conf_dir</name>
+        <value>/usr/hdp/2.5.0.0-1245/smg/dl-manager/conf/</value>
+    </property>
+
+    <property>
+        <name>smg_manager_dir</name>
+        <value>/usr/hdp/2.5.0.0-1245/smg/</value>
+    </property>
+
+    <property>
+        <name>smg_manager_bin_dir</name>
+        <value>/usr/hdp/2.5.0.0-1245/smg/dl-manager/bin</value>
+    </property>
+
+
+
+    <property>
+        <name>smg_worker_pid_dir</name>
+        <value>/usr/hdp/2.5.0.0-1245/smg/dl-worker/bin/worker.pid</value>
+        <display-name>SMG Worker Pid Dir</display-name>
+        <description>Dir containing process ID file</description>
+        <value-attributes>
+            <type>directory</type>
+            <overridable>false</overridable>
+            <editable-only-at-install>true</editable-only-at-install>
+        </value-attributes>
+        <on-ambari-upgrade add="true" />
+    </property>
+
+    <property>
+        <name>smg_worker_log_dir</name>
+        <value>/usr/hdp/2.5.0.0-1245/smg/dl-worker/bin/workerJvm.log</value>
+        <display-name>SMG worker log dir</display-name>
+        <description>SMG worker log dir</description>
+    </property>
+
+    <property>
+        <name>smg_worker_conf_dir</name>
+        <value>/usr/hdp/2.5.0.0-1245/smg/dl-worker/conf/</value>
+    </property>
+
+    <property>
+        <name>smg_worker_dir</name>
+        <value>/usr/hdp/2.5.0.0-1245/smg/</value>
+    </property>
+
+    <property>
+        <name>smg_worker_bin_dir</name>
+        <value>/usr/hdp/2.5.0.0-1245/smg/dl-worker/bin</value>
+    </property>
+
+</configuration>

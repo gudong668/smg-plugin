@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<metainfo>
+    <schemaVersion>2.0</schemaVersion>
+    <services>
+        <service>
+            <!-- 编写Service名称和Service信息 -->
+            <name>SMG</name>
+            <displayName>SMG</displayName>
+            <comment>SMG通过实时同步数据库日志，为通过提供MySQL数据库与大数据平台之间的的结构化数据的实时同步功能。提供图形化界面，具有可灵活配置的优点.</comment>
+            <version>6.0.0</version>
+            <components>
+                <component>
+                    <!-- 编写smg flinker 组件 -->
+                    <name>SMG_FLINLKER</name>
+                    <displayName>SMG Flinker</displayName>
+                    <category>MASTER</category>
+                    <cardinality>1</cardinality>
+                    <commandScript>
+                        <script>scripts/smg_flinker.py</script>
+                        <scriptType>PYTHON</scriptType>
+                        <timeout>5000</timeout>
+                    </commandScript>
+                    <configuration-dependencies>
+                        <config-type>flinker-config</config-type>
+                    </configuration-dependencies>
+                </component>
+                <component>
+                    <!-- 编写smg manager 组件 -->
+                    <name>SMG_MANAGER</name>
+                    <displayName>SMG Manager</displayName>
+                    <category>MASTER</category>
+                    <cardinality>1</cardinality>
+                    <commandScript>
+                        <script>scripts/smg_manager.py</script>
+                        <scriptType>PYTHON</scriptType>
+                        <timeout>5000</timeout>
+                    </commandScript>
+                    <configuration-dependencies>
+                        <config-type>manager-config</config-type>
+                    </configuration-dependencies>
+                </component>
+                <component>
+                    <!-- 编写smg worker 组件 -->
+                    <name>SMG_WORKER</name>
+                    <displayName>SMG Worker</displayName>
+                    <category>MASTER</category>
+                    <cardinality>1</cardinality>
+                    <commandScript>
+                        <script>scripts/smg_worker.py</script>
+                        <scriptType>PYTHON</scriptType>
+                        <timeout>5000</timeout>
+                    </commandScript>
+                    <configuration-dependencies>
+                        <config-type>worker-config</config-type>
+                    </configuration-dependencies>
+                </component>
+            </components>
+            <osSpecifics>
+                <osSpecific>
+                    <osFamily>any</osFamily>
+                    <packages>
+                        <package>
+                            <name>wget</name>
+                        </package>
+                    </packages>
+                </osSpecific>
+            </osSpecifics>
+            <configuration-dependencies>
+                <config-type>smg-env</config-type>
+            </configuration-dependencies>
+            <configuration-dependencies>
+                <config-type>manager-db</config-type>
+            </configuration-dependencies>
+            <configuration-dependencies>
+                <config-type>worker-db</config-type>
+            </configuration-dependencies>
+            <restartRequiredAfterChange>true</restartRequiredAfterChange>
+        </service>
+    </services>
+</metainfo>

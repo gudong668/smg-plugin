@@ -1,0 +1,82 @@
+{
+    "SMG": {
+        "service": [],
+        "SMG_DASHBOARD": [{
+            "name": "SMG_DASHBOARD",
+            "label": "SMG DASHBOARD",
+            "description": "如果SMG DASHBOARD无法访问，则会触发此主机级别警报。",
+            "interval": 1,
+            "scope": "HOST",
+            "source": {
+                "type": "PORT",
+                "uri": "{{smg-env/http_port}}",
+                "default_port": 9099,
+                "reporting": {
+                    "ok": {
+                        "text": "TCP OK - {0:.3f}s response on port {1}"
+                    },
+                    "warning": {
+                        "text": "TCP OK - {0:.3f}s response on port {1}",
+                        "value": 1.5
+                    },
+                    "critical": {
+                        "text": "Connection failed: {0} to {1}:{2}",
+                        "value": 5
+                    }
+                }
+            }
+        }],
+        "SMG_SERVER": [{
+            "name": "SMG_SERVER",
+            "label": "SMG SERVER",
+            "description": "如果SMG SERVER无法访问，则会触发此主机级别警报。",
+            "interval": 1,
+            "scope": "HOST",
+            "source": {
+                "type": "PORT",
+                "uri": "{{smg-env/smg_service_dubbo_protocol_port}}",
+                "default_port": 20880,
+                "reporting": {
+                    "ok": {
+                        "text": "TCP OK - {0:.3f}s response on port {1}"
+                    },
+                    "warning": {
+                        "text": "TCP OK - {0:.3f}s response on port {1}",
+                        "value": 1.5
+                    },
+                    "critical": {
+                        "text": "Connection failed: {0} to {1}:{2}",
+                        "value": 5
+                    }
+                }
+            }
+        }],
+        "SMG_NODE": [{
+            "name": "SMG_NODE",
+            "label": "SMG NODE",
+            "description": "如果SMG NODE无法访问，则会触发此主机级别警报。",
+            "interval": 1,
+            "scope": "HOST",
+            "source": {
+                "type": "PORT",
+                "uri": "{{smg-env/smg_node_app_jetty_port}}",
+                "default_port": 7099,
+                "reporting": {
+                    "ok": {
+                        "text": "TCP OK - {0:.3f}s response on port {1}"
+                    },
+                    "warning": {
+                        "text": "TCP OK - {0:.3f}s response on port {1}",
+                        "value": 1.5
+                    },
+                    "critical": {
+                        "text": "Connection failed: {0} to {1}:{2}",
+                        "value": 5
+                    }
+                }
+            }
+        }]
+    }
+}
+
+

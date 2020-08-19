@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+    <!-- db.properties -->q
+    <property>
+        <name>flinker-config</name>
+        <description>SMG Flinker配置信息</description>
+        <value>
+datax.admin.zkServers=10.1.3.40:2181
+datax.admin.dbconfig.address=10.1.3.40
+datax.admin.dbconfig.port=3306
+datax.admin.schema=ucar_datalink
+datax.admin.dbconfig.username=root
+datax.admin.dbconfig.password=9aa7ba09c7ddfcb2
+datax.admin.rest.server.port=8085
+        </value>
+        <value-attributes>
+            <type>content</type>
+        </value-attributes>
+    </property>
+</configuration>

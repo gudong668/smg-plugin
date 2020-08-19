@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+    <!-- db.properties -->
+    <property>
+        <name>manager-config</name>
+        <description>SMG Manager配置信息</description>
+        <value>
+port=8898
+#http
+http.port=9099
+#zookeeper
+zookeeper.servers=localhost:2181
+#environment
+currentEnv=release
+#\u76D1\u63A7\u68C0\u6D4B\u9891\u7387\uFF0C\u5355\u4F4Ds
+monitor.check.intervalTime=30
+#\u521B\u5EFAmysqltask\u65F6\uFF0C\u662F\u5426\u5F00\u542F\u8BFB\u7AEF\u591A\u8DEF\u590D\u7528
+multiplexingRead=false
+# min jvm memory for flinker job
+flinker.job.min.jvmMemory=1G
+# max jvm memory for flinker job
+flinker.job.max.jvmMemory=2G
+        </value>
+        <value-attributes>
+            <type>content</type>
+        </value-attributes>
+    </property>
+</configuration>

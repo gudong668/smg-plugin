@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+    <!-- db.properties -->
+    <property>
+        <name>worker-config</name>
+        <description>SMG Manager-配置信息</description>
+        <value>
+#datalink-manager
+bootstrap.servers=:8898,:8899
+#zookeeper
+zookeeper.servers=:2181
+zookeeper.session.timeout.ms=30000
+zookeeper.connection.timeout.ms=10000
+zookeeper.root=/datalink
+worker.bootMode=distributed
+worker.probe.blackList=
+client.id=7
+classloader.type=Rel
+        </value>
+        <value-attributes>
+            <type>content</type>
+        </value-attributes>
+    </property>
+</configuration>
